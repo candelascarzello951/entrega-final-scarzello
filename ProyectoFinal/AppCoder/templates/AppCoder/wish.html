@@ -2,8 +2,14 @@
 {% extends 'AppCoder/base.html' %}
 
 {% block contenido %}
-   <h1 align= "left" > Wish List</h1>
-   <p> Lista de aromas pedidos pedidos por ustedes</p>
+<header class="masthead">
+  <h1 align= "center" > WISH LIST</h1>
+  <h3 align= "center" >Lista de aromas pedidos  por ustedes</h3>
+  <section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="col mb-5">
+
 
      {% for producto in producto %}
      <li>{{ producto.nombre_producto}}</li>

@@ -3,10 +3,11 @@
 
 {% block contenido %}
 
-    <h1 align= "left" >Crear Clientes</h1>
+<h1 align= "left" > Busca en nuestros Stock</h1>
+<body action="/AppCoder/buscar" style="background-color: gray;">
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form.as_table }}
         <button type="submit">Guardar</button>
     </form>
 {% endblock contenido %}

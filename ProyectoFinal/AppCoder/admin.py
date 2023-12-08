@@ -4,3 +4,4 @@ from . import models
 
 admin.site.register(models.Cliente)
 admin.site.register(models.Producto)
+admin.site.register(models.stock)

@@ -1,13 +1,33 @@
-from django.shortcuts import render
+
 from django.shortcuts import redirect, render
 from . import models 
-
+from . import forms
+from .forms import stock_busqueda
+from .models import stock
 
 def inicio_view(request):
     return render(request, "AppCoder/inicio.html")
 
-def productos_view(request):
-    return render(request, "AppCoder/productos.html") 
+
+def buscar_view(request):
+   if request.method == "GET": 
+       form = stock_busqueda() 
+       return render(request, "AppCoder/buscar.html", {"form": form})
+   else:
+       formulario = forms.stock_busqueda(request.POST)
+       if formulario.is_valid():
+            informacion = formulario.cleaned_data
+            filtrados = []
+            for stock in models.stock.objects.filter (stock =informacion["stock"]):
+                filtrados.append(stock)
+            
+            contexto = {"stock": filtrados}
+            return render(request, "AppCoder/stock.html", contexto)
+
+def productos_view(request):    
+    Stock= models.stock.objects.all() 
+    context = {"stock": Stock}
+    return render(request, "AppCoder/productos.html",context) 
 
 def wish_view (request):
     Solicitados = models.Producto.objects.all()
@@ -19,7 +39,6 @@ def clientes_view(request):
     context = {"clientes": Clientes}
     return render(request, "AppCoder/clientes.html", context) 
 
-from . import forms
 
 def crear_view(request): 
     if request.method == "POST":

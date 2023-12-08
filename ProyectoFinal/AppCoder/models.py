@@ -12,4 +12,10 @@ class Cliente(models.Model):
     
     def __str__(self):
         return f"{self.nombre} {self.apellido}"
+    
+class stock (models.Model):
+    stock = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{self.stock}"
 

@@ -1,0 +1,14 @@
+{% extends 'AppCoder/base.html' %}
+
+{% block contenido %}
+<h3> Esto fue lo que se encontró: </h3>
+
+    {% if stock %}
+        <ul>
+             {% for stock in stock %}
+                 <li>{{ stock.stock}}</li>
+             {% endfor %}
+        </ul>
+     {% endif %}
+
+{% endblock contenido %}

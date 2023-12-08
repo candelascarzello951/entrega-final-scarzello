@@ -11,3 +11,6 @@ class ProductoForm(forms.ModelForm):
     class Meta:
         model = models.Producto
         fields = ["nombre_producto"]
+
+class stock_busqueda (forms.Form):
+      stock = forms.CharField()
