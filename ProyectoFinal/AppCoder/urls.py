@@ -20,6 +20,6 @@ urlpatterns = [
     path("wish/crear", productos_solicitados_view, name="solicitados"),
     path("clientes/", clientes_view, name="clientes"),
     path("clientes/crear", crear_view, name= "crear"),
-    path("productos/buscar", buscar_view, name="buscar"),
+    path("buscar/", buscar_view, name="buscar"),
     
 ]
