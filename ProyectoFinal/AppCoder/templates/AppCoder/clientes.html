@@ -1,0 +1,12 @@
+{% extends 'AppCoder/base.html' %}
+
+{% block contenido %}
+   <h1 align= "left" > Lista de Clientes</h1>
+   
+     {% for clientes in clientes %}
+     <li>{{ clientes.nombre}} {{ clientes.apellido }}</li>
+  
+   {% endfor %}
+{% endblock contenido %}
+  
+
