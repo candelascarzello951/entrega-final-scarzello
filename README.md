@@ -1,6 +1,8 @@
 # gitProyecto final Coder
 Hola Como estan? Este es mi proyecto. Mi pagina web está creada para la compra de velas y además está configurada para que el usuario interactue con la misma.
 Les dejo el link de youtube para que puedan ver el video https://youtu.be/m301l3lOAtE
+
+
  http://127.0.0.1:8000/ --> ingresamos a la pagina principal 
  http://127.0.0.1:8000/historia/ --> Cuento mi historia personal
  http://127.0.0.1:8000/productos/ --> podemos visualizar los productos que tenemos en stock
