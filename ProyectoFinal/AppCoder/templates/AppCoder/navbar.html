@@ -1,10 +1,27 @@
 <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
+                {% if user.is_authenticated %}
                 <a class="navbar-brand" href="{% url 'AppCoder:inicio' %}">Inicio</a>
+                <a class="navbar-brand" href="{% url 'AppCoder:historia' %}">Sobre mí</a>
                 <a class="navbar-brand" href="{% url 'AppCoder:productos' %}">Productos</a>
-                <a class="navbar-brand" href="{% url 'AppCoder:clientes' %}">Clientes</a>
-                <a class="navbar-brand" href="{% url 'AppCoder:wish' %}">Wish List</a>
-                <a class="navbar-brand" href="{% url 'AppCoder:buscar' %}">Buscar</a>
+                <a class="navbar-brand" href="{% url 'AppCoder:socios' %}">Clientes</a>
+                <a class="navbar-brand" href="{% url 'AppCoder:visualizar-blogs' %}">Blog</a>
+                <a class="navbar-brand" href="{% url 'AppCoder:crear-blog' %}">Crear Blog</a>
+
+                <a class="navbar-brand" href="{% url 'AppCoder:editar-perfil' %}"> Configuración</a>
+                <a class="navbar-brand" href="{% url 'AppCoder:crear-avatar' %}">Tu avatar</a>
+                <img src="{{ avatar_url }}" style="height: 40px; width: auto; border-radius: 50%; vertical-align: middle;"/>
+                <span class="navbar-text">{{ user.username }}</span>
+                <a class="navbar-brand" href="{% url 'AppCoder:logout' %}">Logout</a>
+                {% else %}
+                    <a class="navbar-brand" href="{% url 'AppCoder:inicio' %}">Inicio</a>
+                    <a class="navbar-brand" href="{% url 'AppCoder:historia' %}">Sobre mí</a>
+                    <a class="navbar-brand" href="{% url 'AppCoder:productos' %}">Productos</a>
+                    <a class="navbar-brand" href="{% url 'AppCoder:login' %}">Login</a>
+                    <a class="navbar-brand" href="{% url 'AppCoder:registro' %}">Registrar usuario</a>
+                   
+                {% endif %}
+
             </div>
         </nav>

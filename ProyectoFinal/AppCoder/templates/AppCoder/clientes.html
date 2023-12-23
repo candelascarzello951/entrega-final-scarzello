@@ -1,15 +1,55 @@
 {% extends 'AppCoder/base.html' %}
+{% load static %}
 
 {% block contenido %}
-<header class="masthead">
-  <h1 align= "center" > Lista de Clientes</h1>
+  <header class="masthead">
+    <h1 align="center">Lista de Clientes</h1>
+  </header>
+
   <section class="py-5">
     <div class="container px-4 px-lg-5 mt-5">
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+      <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        {% if clientes %}
+          {% for cliente in clientes %}
             <div class="col mb-5">
-     {% for clientes in clientes %}
-     <li>{{ clientes.nombre}} {{ clientes.apellido }}</li>
-     {% endfor %}
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <span class="text-primary">Nombre: {{ cliente.nombre.capitalize }}</span>
+                  </h5>
+                  <h5 class="card-title">
+                    <span class="text-primary">Apellido: {{ cliente.apellido.capitalize }}</span>
+                  </h5>
+                  <div class="d-flex justify-content-between">
+                    <form method="post" action="{% url 'AppCoder:delete' cliente.id %}">
+                      {% csrf_token %}
+                      <button type="submit" class="btn btn-primary">Eliminar</button>
+                    </form>
+                    <a href="{% url 'AppCoder:editar' pk=cliente.id %}" class="btn btn-primary">Editar</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <div class="col mb-5">
+            <h1 class="text-danger">No existen clientes por el momento</h1>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
 {% endblock contenido %}
+
+
+
+
+
+
+
+
+
+
+
   
 

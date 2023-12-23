@@ -1,0 +1,57 @@
+{% extends 'AppCoder/base.html' %}
+{% load static %}
+{% block contenido %}
+ 
+<header class="masthead">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <div class="text-center text-white">
+                    
+                    <!-- Page heading -->
+                    <h1 class="mb-5">Sobre mí</h1>
+                    <!-- Signup form -->
+                    <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                        <!-- Email address input -->
+                        <!-- Submit success message -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<style>
+    .espaciado {
+      margin: 10px; /* Agrega espacio externo */
+      padding: 5px; /* Agrega espacio interno */
+    }
+  </style>
+  
+  <div class="espaciado">
+    
+  </div>
+  
+<!-- Contenido principal -->
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+
+
+    <p>Hola a todos, soy Cande y este es mi pequeño emprendimiento. Todo empezó como una idea en plena pandemia y después de 3 años, mi sueño se está haciendo realidad.</p>
+
+    <p>Desde que soy chica estoy rodeada de distintos aromas peculiares. No hay nada más satisfactorio que entrar a tu hogar y sentir que un aroma te abraza. Y eso se puede lograr con una vela.</p>
+
+    <p>Una vela es algo tan básico y bello; simple y necesario; un símbolo que transmite paz y tiene la habilidad de transportarnos a momentos con solo prenderse.</p>
+
+    <p>Sé que tengo un camino largo por delante, pero me gustaría caminarlo con ustedes, vayamos hacia el futuro juntos.</p>
+
+            </div>
+        </div>
+    </div>
+</main>
+{% include 'AppCoder/footer.html' %}
+</body>
+</html>
+
+{% endblock contenido %}

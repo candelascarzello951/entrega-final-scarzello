@@ -1,0 +1,50 @@
+{% extends 'AppCoder/base.html' %}
+
+{% block contenido %}
+
+<html lang="en">
+    <header class="masthead">
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="text-center text-white">
+                        <head>
+                            <h1 style="margin-top: 2px;">Registrarse</h1>
+                            <style>
+                                .error-list {
+                                    color: white;
+                                }
+                            </style>
+                        </head>
+
+                        <body style="background-color: rgb(227, 224, 225);">
+
+                            <form action="" method="POST">
+                                {% csrf_token %}
+
+                                {% for field in form %}
+                                    <p>
+                                        {{ field.label_tag }}
+                                        {{ field }}
+
+                                        {% if field.errors %}
+                                            <ul class="error-list">
+                                                {% for error in field.errors %}
+                                                    <li>{{ error }}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </p>
+                                {% endfor %}
+
+                                <input type="submit" value="Iniciar sesión">
+                            </form>
+                        </body>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</html>
+
+{% endblock contenido %}

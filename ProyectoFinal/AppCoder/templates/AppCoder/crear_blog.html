@@ -1,0 +1,33 @@
+{% extends 'AppCoder/base.html' %}
+
+{% block contenido %}
+  <div style="max-width: 600px; margin: auto;">
+    <h1 style="color: #4a90e2; text-align: center; margin-bottom: 20px;">Crea tu Blog</h1>
+
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      
+      <div style="margin-bottom: 15px;">
+        {{ formulario.titulo.label_tag }}
+        {{ formulario.titulo }}
+      </div>
+
+      <div style="margin-bottom: 15px;">
+        {{ formulario.autor.label_tag }}
+        {{ formulario.autor }}
+      </div>
+
+      <div style="margin-bottom: 15px;">
+        Cuentenos para que usó la vela:
+        {{ formulario.descripcion }}
+      </div>
+
+      <div style="margin-bottom: 15px;">
+        Inserte una imagen con su vela:
+        {{ formulario.imagen }}
+      </div>
+
+      <button type="submit" style="background-color: #4a90e2; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Guardar</button>
+    </form>
+  </div>
+{% endblock %}

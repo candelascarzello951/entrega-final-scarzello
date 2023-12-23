@@ -1,12 +1,17 @@
 {% extends 'AppCoder/base.html' %}
 
-
 {% block contenido %}
+  <div style="max-width: 600px; margin: auto; padding: 20px;">
+    <h1 style="color: #4a90e2;">Crear Clientes</h1>
 
-    <h1 align= "left" >Crear Clientes</h1>
     <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar</button>
+      {% csrf_token %}
+
+      <div style="margin-bottom: 15px;">
+        {{ miformulario.as_p }}
+      </div>
+
+      <button type="submit" style="background-color: #4a90e2; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Guardar</button>
     </form>
+  </div>
 {% endblock contenido %}

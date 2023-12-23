@@ -1,0 +1,40 @@
+{% extends 'AppCoder/base.html' %}
+{% load static %}
+{% block contenido %}
+            
+<!-- Masthead-->
+    <header class="masthead">
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="text-center text-white">
+                            <!-- Page heading-->
+                            <h1 class="mb-5">¡Felicitaciones!</h1>
+                            <h3 class="mb-5"> {{ mensaje }} </h3>
+                            <!-- Signup form-->
+                            <!-- * * * * * * * * * * * * * * *-->
+                            <!-- * * SB Forms Contact Form * *-->
+                            <!-- * * * * * * * * * * * * * * *-->
+                            <!-- This form is pre-integrated with SB Forms.-->
+                            <!-- To make this form functional, sign up at-->
+                            <!-- https://startbootstrap.com/solution/contact-forms-->
+                            <!-- to get an API token!-->
+                            <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                <!-- Email address input-->
+                            
+                             
+                                <!-- Submit success message-->
+                                <!---->
+                                <!-- This is what your users will see when the form-->
+                                <!-- has successfully submitted-->
+                                
+            
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </body>
+    {% include 'AppCoder/footer.html' %}
+{% endblock contenido %}
